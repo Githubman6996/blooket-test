@@ -1,0 +1,227 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,300&family=Titan+One&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: #111113;
+  background-image: url("/images/code.png");
+  animation: background-move 80s linear infinite forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes background-move {
+  from {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  to {
+    background-position-x: 100%;
+    background-position-y: -200%;
+  }
+}
+main {
+  width: 600px;
+  min-width: 38rem;
+  max-width: 90%;
+  min-height: 400px;
+  max-height: 95%;
+  height: 90%;
+  resize: both;
+  background-color: #eee;
+  border-radius: 32px;
+  overflow: hidden;
+  overflow-wrap: normal;
+  box-shadow: black 5px 5px 50px;
+}
+
+main .main-header {
+  width: 100%;
+  height: 7rem;
+  background-color: #9a49aa;
+  box-shadow: #7B3A88 0 10px 0 0;
+  padding: 32px;
+  margin-bottom: 10px;
+}
+
+main .main-header > * {
+  display: inline-block;
+}
+
+main .main-header span.header-secondary {
+  float: right;
+  font-size: 2.25rem;
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.5019607843) 2px 2px 8px;
+}
+
+span.text-secondary {
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.margin-left {
+  margin-left: 0.5em;
+}
+
+p, span, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Titan One", sans-serif;
+  font-size: 2.5rem;
+  text-shadow: rgba(0, 0, 0, 0.5019607843) 4px 4px 8px;
+  color: white;
+}
+
+h2 {
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  font-size: 1.5rem;
+}
+
+main .main-body {
+  width: 100%;
+  height: calc(100% - 7rem);
+  padding: 32px;
+  overflow: hidden scroll;
+  position: relative;
+  font-family: "Noto Sans", "Roboto", sans-serif;
+  font-size: 1.25rem;
+}
+
+main .main-body .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  justify-items: center;
+}
+
+.text-add-space > * + * {
+  margin-top: 12px;
+}
+
+main .main-body .medium {
+  max-width: min(100%, 280px);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.5019607843) 2px 2px 8px;
+  position: sticky;
+  top: 16px;
+}
+
+main .main-body img.small {
+  width: 1em;
+  height: 1em;
+  translate: 0 0.15em;
+  border-radius: 0.2em;
+  box-shadow: rgba(0, 0, 0, 0.5019607843) 1px 1px 4px;
+}
+
+.premium-icon {
+  width: 1em;
+  height: 1em;
+  translate: 0 0.15em;
+  filter: contrast(0.2);
+}
+
+ul.feature-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 1em;
+}
+
+ul.feature-list li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+ul.feature-list li:before {
+  content: "→";
+  color: #444;
+  padding-right: 1em;
+}
+
+span.gray {
+  color: #777;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form:has(.buy-premium) {
+  margin-block: 2rem;
+  width: 80%;
+  max-width: 460px;
+  height: 80px;
+}
+
+.buy-premium {
+  width: 100%;
+  height: 100%;
+  animation: rgb 10s linear infinite forwards;
+  border-radius: 16px;
+  font-size: 2rem;
+  font-family: "Titan One", sans-serif;
+  color: white;
+  text-shadow: rgba(0, 0, 0, 0.5019607843) 4px 4px 8px;
+  transition: scale 200ms ease-in-out, font-size 200ms ease-in-out;
+}
+
+.buy-premium:hover {
+  cursor: pointer;
+  animation-play-state: paused;
+  scale: 1.02;
+  font-size: 2.1rem;
+}
+
+@keyframes rgb {
+  0% {
+    background-color: hsl(calc(360 * (0 / 10)), 30%, 50%);
+  }
+  10% {
+    background-color: hsl(calc(360 * (1 / 10)), 30%, 50%);
+  }
+  20% {
+    background-color: hsl(calc(360 * (2 / 10)), 30%, 50%);
+  }
+  30% {
+    background-color: hsl(calc(360 * (3 / 10)), 30%, 50%);
+  }
+  40% {
+    background-color: hsl(calc(360 * (4 / 10)), 30%, 50%);
+  }
+  50% {
+    background-color: hsl(calc(360 * (5 / 10)), 30%, 50%);
+  }
+  60% {
+    background-color: hsl(calc(360 * (6 / 10)), 30%, 50%);
+  }
+  70% {
+    background-color: hsl(calc(360 * (7 / 10)), 30%, 50%);
+  }
+  80% {
+    background-color: hsl(calc(360 * (8 / 10)), 30%, 50%);
+  }
+  90% {
+    background-color: hsl(calc(360 * (9 / 10)), 30%, 50%);
+  }
+  100% {
+    background-color: hsl(calc(360 * (10 / 10)), 30%, 50%);
+  }
+}/*# sourceMappingURL=help_page.css.map */

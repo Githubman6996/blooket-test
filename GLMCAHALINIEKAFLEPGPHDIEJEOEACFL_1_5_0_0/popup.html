@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="popup.js" defer></script>
+  <title>Blooket Hacker - Llama Dev</title>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="row">
+        <h2>Start/Stop:</h2>
+        <button><img class="icon" id="start" src="images/checkmark.svg" alt="✓"></button>
+        <button><img class="icon" id="stop" src="images/close.svg" alt="X"></button>
+      </div>
+    </header>
+    <fieldset class="settings">
+      <legend>Settings</legend>
+      <section>
+        <label class="small-p" for="tick-delay">Tick Delay (<span id="tick-delay-span">150</span>ms)</label>
+        <input class="slider" type="range" name="tick-delay" id="tick-delay" value="150" min="10" max="999">
+      </section>
+      <section>
+        <input id="reset-data" type="button" value="Reset Data">
+      </section>
+    </fieldset>
+    <p style="font-size: 0.9em; color: lightgray; padding-top: 6px">
+      <b>Notice:</b> The extension will not choose answers immediately. After you answer a question correctly (or incorrectly), next time you get the question it will answer for you. Good luck!
+    </p>
+  </main>
+</body>
+</html>

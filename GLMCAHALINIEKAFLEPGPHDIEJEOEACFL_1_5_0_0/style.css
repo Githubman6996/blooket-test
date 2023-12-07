@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&display=swap");
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #101010;
+  width: 160px;
+  height: 245px;
+  overflow: hidden;
+}
+
+html:has(body.shrink) {
+  width: 15px;
+  height: 15px;
+}
+
+p, span, label, h2, h3, h4, h5, h6 {
+  font-family: "Comfortaa", "Roboto", "Helvetica", sans-serif;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+body {
+  width: 160px;
+  height: 245px;
+  background-color: #684646;
+  font-family: "Comfortaa", "Roboto", "Helvetica", sans-serif;
+  color: white;
+  margin: 0;
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  overflow-wrap: normal;
+  animation: rgb 10s linear infinite forwards;
+}
+body.shrink {
+  width: 32px;
+  height: 28px;
+}
+body.shrink header {
+  margin-right: 12px;
+}
+
+@keyframes shrink {
+  0% {
+    width: 160px;
+    height: 245px;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+  }
+}
+@keyframes rgb {
+  0% {
+    background-color: hsl(calc(360 * (0 / 10)), 15%, 30%);
+  }
+  10% {
+    background-color: hsl(calc(360 * (1 / 10)), 15%, 30%);
+  }
+  20% {
+    background-color: hsl(calc(360 * (2 / 10)), 15%, 30%);
+  }
+  30% {
+    background-color: hsl(calc(360 * (3 / 10)), 15%, 30%);
+  }
+  40% {
+    background-color: hsl(calc(360 * (4 / 10)), 15%, 30%);
+  }
+  50% {
+    background-color: hsl(calc(360 * (5 / 10)), 15%, 30%);
+  }
+  60% {
+    background-color: hsl(calc(360 * (6 / 10)), 15%, 30%);
+  }
+  70% {
+    background-color: hsl(calc(360 * (7 / 10)), 15%, 30%);
+  }
+  80% {
+    background-color: hsl(calc(360 * (8 / 10)), 15%, 30%);
+  }
+  90% {
+    background-color: hsl(calc(360 * (9 / 10)), 15%, 30%);
+  }
+  100% {
+    background-color: hsl(calc(360 * (10 / 10)), 15%, 30%);
+  }
+}
+main {
+  width: 160px;
+  height: 230px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: calc(100% - 10px);
+  grid-template-rows: 20px auto;
+  justify-content: center;
+  gap: 4px;
+}
+
+header {
+  width: 140px;
+  height: 20px;
+  padding-top: 1px;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+header .row {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+header h2 {
+  font-size: 16px;
+  margin-right: auto;
+}
+header button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+}
+header button + button {
+  margin-left: 4px;
+}
+header .icon {
+  width: 17px;
+  height: 17px;
+}
+
+fieldset {
+  min-width: 0;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.settings legend {
+  font-size: 0.9rem;
+}
+.settings .slider {
+  width: 100%;
+}
+
+input[type=range], input[type=checkbox] {
+  animation: rgbAccent 10s linear infinite forwards;
+}
+
+input[type=range]:focus, input[type=checkbox]:focus {
+  outline: none;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2509803922));
+}
+
+@keyframes rgbAccent {
+  0% {
+    accent-color: hsl(0, 50%, 70%);
+  }
+  10% {
+    accent-color: hsl(36, 50%, 70%);
+  }
+  20% {
+    accent-color: hsl(72, 50%, 70%);
+  }
+  30% {
+    accent-color: hsl(108, 50%, 70%);
+  }
+  40% {
+    accent-color: hsl(144, 50%, 70%);
+  }
+  50% {
+    accent-color: hsl(180, 50%, 70%);
+  }
+  60% {
+    accent-color: hsl(216, 50%, 70%);
+  }
+  70% {
+    accent-color: hsl(252, 50%, 70%);
+  }
+  80% {
+    accent-color: hsl(288, 50%, 70%);
+  }
+  90% {
+    accent-color: hsl(324, 50%, 70%);
+  }
+  100% {
+    accent-color: hsl(0, 50%, 70%);
+  }
+}
+.small-p {
+  font-size: 0.75rem;
+}
+
+.header-p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.auto-click-cont {
+  font-size: 1.05rem;
+  padding-left: 1ch;
+}
+.auto-click-cont label {
+  font-size: 14px;
+}
+
+input[type=button] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: rgba(255, 255, 255, 0.1254901961);
+  border: 1px solid white;
+  color: white;
+  transition: background-color 300ms;
+}
+
+input[type=button]:hover {
+  background-color: rgba(170, 170, 170, 0.3764705882);
+}
+
+input[type=button]:active {
+  background-color: rgba(85, 85, 85, 0.3764705882);
+}/*# sourceMappingURL=style.css.map */

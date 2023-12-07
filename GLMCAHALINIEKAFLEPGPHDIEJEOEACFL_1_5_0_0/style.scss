@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Roboto+Slab&display=swap');
+
+$width: 160px;
+$height: 245px;
+$header: 20px;
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #101010;
+  width: $width;
+  height: $height;
+  overflow: hidden;
+}
+
+html:has(body.shrink) {
+  width: 15px;
+  height: 15px;
+}
+
+p, span, label, h2, h3, h4, h5, h6 {
+  font-family: "Comfortaa", "Roboto", "Helvetica", sans-serif;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+body {
+  width: $width;
+  height: $height;
+  background-color: #684646;
+  font-family: "Comfortaa", "Roboto", "Helvetica", sans-serif;
+  color: white;
+  margin: 0;
+
+  display: flex;
+  align-content: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+  overflow-wrap: normal;
+
+  animation: rgb 10s linear infinite forwards;
+  // transition: width 500ms, height 500ms;
+
+  &.shrink {
+    width: 32px;
+    height: 28px;
+    // animation: shrink 500ms ease-in-out forwards;
+
+    header {
+      margin-right: 12px;
+    }
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: $width;
+    height: $height;
+  }
+  100% {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@keyframes rgb {
+  @for $hue from 0 through 10 {
+    #{$hue * 10}% {
+      background-color: hsl(calc(360 * (#{$hue} / 10)), 15%, 30%);
+    }
+  }
+}
+
+main {
+  width: $width;
+  height: #{$height - 15px};
+  padding: 5px;
+  display: grid;
+  grid-template-columns: calc(100% - 10px);
+  grid-template-rows: $header auto;
+  justify-content: center;
+  gap: 4px;
+}
+
+header {
+  width: #{$width - 20px};
+  height: $header;
+  padding-top: 1px;
+  scroll-behavior: smooth;
+  overflow: hidden;
+
+  // transition: margin-right 500ms;
+
+  .row {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  h2 {
+    font-size: #{$header * 0.8};
+    margin-right: auto;
+  }
+
+  button {
+    width: #{$header};
+    height: #{$header};
+    padding: 0;
+  }
+
+  button + button {
+    margin-left: 4px;
+  }
+
+  .icon {
+    width: #{$header - 3px};
+    height: #{$header - 3px};
+  }
+}
+
+fieldset {
+  min-width: 0;
+  height: fit-content
+}
+
+.settings {
+  legend {
+    font-size: 0.9rem;
+  }
+
+  .slider {
+    width: 100%;
+  }
+}
+
+input[type="range"], input[type="checkbox"] {
+  animation: rgbAccent 10s linear infinite forwards;
+}
+
+input[type="range"]:focus, input[type="checkbox"]:focus {
+  outline: none;
+  filter: drop-shadow(0 0 5px #00000040);
+}
+
+@keyframes rgbAccent {
+  @for $hue from 0 through 10 {
+    #{$hue * 10}% {
+      accent-color: hsl($hue * 36, 50%, 70%);
+    }
+  }
+}
+
+.small-p {
+  font-size: 0.75rem;
+}
+
+.header-p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.auto-click-cont {
+  font-size: 1.05rem;
+  padding-left: 1ch;
+
+  label {
+    font-size: 14px;
+  }
+}
+
+input[type="button"] {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+  background-color: #ffffff20;
+  border: 1px solid white;
+  color: white;
+
+  transition: background-color 300ms;
+}
+
+input[type="button"]:hover {
+  background-color: #aaaaaa60;
+}
+
+input[type="button"]:active {
+  background-color: #55555560;
+}

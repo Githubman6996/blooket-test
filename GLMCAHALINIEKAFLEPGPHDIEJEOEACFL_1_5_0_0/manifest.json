@@ -1,0 +1,28 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Blooket Hacker",
+  "author": "Nolan Medalla",
+  "description": "Helps you win your Blooket game! Created by Llama Dev",
+  "version": "1.5",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.blooket.com/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "start_page.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "/images/blooket_hacker_icon.png"
+    }
+  },
+  "icons": {
+    "32": "/images/blooket_hacker_icon.png"
+  }
+}
